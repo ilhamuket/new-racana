@@ -33,35 +33,35 @@
                                 <nav>                  
                                     <ul id="navigation">    
                                         <li><a href="/">BERANDA</a></li>
-                                        <li><a href="{{ route('profil') }}">PROFIL AMBACANA</a>
+                                        <li><a href="#">PROFIL AMBACANA</a>
                                             <ul class="submenu">
-                                                <li><a href="{{ route('tekpram') }}">LOGO AMBACANA</a></li>
-                                                <li><a href="{{ route('kir') }}">PRAMUKA ARS</a></li>
+                                                <li><a href="{{ route('logo') }}">LOGO AMBACANA</a></li>
+                                                <li><a href="#">PRAMUKA ARS</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('mars') }}">SANDI AMBACANA</a></li>
-                                        <li><a href="{{ route('logo') }}">ADMINISTRASI PRAMUKA ARS</a>
+                                        <li><a href="#">SANDI AMBACANA</a></li>
+                                        <li><a href="#">ADMINISTRASI PRAMUKA ARS</a>
                                             <ul class="submenu">
-                                                <li><a href="{{ route('bidang') }}">AD & ART</a></li>
-                                                <li><a href="{{ route('kir') }}">PRAMUKA ARS</a></li>
-                                                <li><a href="{{ route('tekpram') }}">DATA POTENSI</a></li>
-                                                <li><a href="{{ route('lokasi') }}">STRUKTUR KEPENGURUSAN</a>
+                                                <li><a href="{{ route('adart') }}">AD & ART</a></li>
+                                                <li><a href="{{ route('pramukars') }}">PRAMUKA ARS</a></li>
+                                                <li><a href="{{ route('data') }}">DATA POTENSI</a></li>
+                                                <li><a href="{{ route('struktur') }}">STRUKTUR KEPENGURUSAN</a>
                                                     <ul class="submenu">
-                                                        <li><a href="{{ route('bidang') }}">GUGUS DEPAN</a></li>
-                                                        <li><a href="{{ route('kir') }}">DEWAN AMBALAN</a></li>
-                                                        <li><a href="{{ route('kir') }}">DEWAN RACANA</a></li>
+                                                        <li><a href="{{ route('gugusdepan') }}">GUGUS DEPAN</a></li>
+                                                        <li><a href="{{ route('dewanambalan') }}">DEWAN AMBALAN</a></li>
+                                                        <li><a href="{{ route('dewanracana') }}">DEWAN RACANA</a></li>
                                                     </ul>
                                                 </li>
                                             </ul></li>
-                                            <li><a href="{{ route('mars') }}">UNIT PENGEMBANGAN</a>
+                                            <li><a href="#">UNIT PENGEMBANGAN</a>
                                                 <ul class="submenu">
-                                                    <li><a href="{{ route('bidang') }}">UNIT PROTOKOLER</a></li>
-                                                    <li><a href="{{ route('kir') }}">UNIT SEARCH AND RESCUE</a></li>
-                                                    <li><a href="{{ route('kir') }}">UNIT MEDIA PERS DAN KOMINFO</a></li>
+                                                    <li><a href="{{ route('unitprotokol') }}">UNIT PROTOKOLER</a></li>
+                                                    <li><a href="{{ route('unitsearchandrescue') }}">UNIT SEARCH AND RESCUE</a></li>
+                                                    <li><a href="{{ route('unitmediapers') }}">UNIT MEDIA PERS DAN KOMINFO</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{{ route('mars') }}">PROGRAM KERJA</a></li>
-                                            <li><a href="{{ route('mars') }}">PRESTASI</a></li>
+                                            <li><a href="{{ route('programkerja') }}">PROGRAM KERJA</a></li>
+                                            <li><a href="{{ route('sandi') }}">PRESTASI</a></li>
                                     </ul>
                                 </nav>
                             </div>

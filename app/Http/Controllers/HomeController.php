@@ -72,7 +72,7 @@ class HomeController extends Controller
 
         return view('home.profile',compact('data','trending','popular'));
     }
-    public function mars(){
+    public function sandi(){
 
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
@@ -83,8 +83,9 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.mars',compact('data','trending','popular'));
+        return view('home.sandi',compact('data','trending','popular'));
     }
+
     public function logo(){
 
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
@@ -98,7 +99,8 @@ class HomeController extends Controller
                     ->get();
         return view('home.logo',compact('data','trending','popular'));
     }
-    public function lokasi(){
+
+    public function adart(){
 
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
@@ -109,9 +111,10 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.lokasi',compact('data','trending','popular'));
+        return view('home.adart',compact('data','trending','popular'));
     }
-    public function tekpram(){
+
+    public function pramukars(){
 
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
@@ -122,9 +125,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.tekpram',compact('data','trending','popular'));
+        return view('home.pramukars',compact('data','trending','popular'));
     }
-    public function proker(){
+
+
+    public function data(){
 
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
@@ -135,9 +140,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.proker',compact('data','trending','popular'));
+        return view('home.data',compact('data','trending','popular'));
     }
-    public function bidang(){
+
+    public function struktur(){
+
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
     $data = TmDataArticle::with('categories')->where('status', 1)->get();
@@ -147,9 +154,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.bidang',compact('data','trending','popular'));
-    }
-    public function kir(){
+        return view('home.data',compact('struktur','trending','popular'));
+    } 
+
+    public function gugusdepan(){
+
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
     $data = TmDataArticle::with('categories')->where('status', 1)->get();
@@ -159,9 +168,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.kir',compact('data','trending','popular'));
+        return view('home.gugusdepan',compact('data','trending','popular'));
     }
-    public function fbs(){
+
+    public function dewanambalan(){
+
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
     $data = TmDataArticle::with('categories')->where('status', 1)->get();
@@ -171,9 +182,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.fbs',compact('data','trending','popular'));
+        return view('home.dewanambalan',compact('data','trending','popular'));
     }
-    public function kelompok(){
+
+    public function dewanracana(){
+
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
     $data = TmDataArticle::with('categories')->where('status', 1)->get();
@@ -183,9 +196,55 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.kelompok',compact('data','trending','popular'));
+        return view('home.dewanracana',compact('data','trending','popular'));
     }
 
+    public function unitprotokol(){
+
+        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+
+    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+
+    $popular = TmDataArticle::with('categories')
+                    ->where('status', 1)
+                    ->inRandomOrder()
+                    ->limit(5)
+                    ->get();
+        return view('home.unitprotokol',compact('data','trending','popular'));
+    }
+
+    public function unitsearchandrescue(){
+
+        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+
+    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+
+    $popular = TmDataArticle::with('categories')
+                    ->where('status', 1)
+                    ->inRandomOrder()
+                    ->limit(5)
+                    ->get();
+        return view('home.unitsearchandrescue',compact('data','trending','popular'));
+    }
+    
+    public function programkerja(){
+
+        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+
+    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+
+    $popular = TmDataArticle::with('categories')
+                    ->where('status', 1)
+                    ->inRandomOrder()
+                    ->limit(5)
+                    ->get();
+        return view('home.programkerja',compact('data','trending','popular'));
+    }
+    
+
+    
+    
+    
     public function join(){
 
         return view('home.join');

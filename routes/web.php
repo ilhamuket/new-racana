@@ -25,17 +25,22 @@ Route::get('/welcome', function () {
 
 //home
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/mars', [HomeController::class, 'mars'])->name('mars');
+Route::get('/sandi', [HomeController::class, 'sandi'])->name('sandi');
 Route::get('/detail/{id}', [HomeController::class, 'detail'])->name('detail');
 Route::get('/profil', [HomeController::class, 'profil'])->name('profil');
 Route::get('/logo', [HomeController::class, 'logo'])->name('logo');
-Route::get('/lokasi', [HomeController::class, 'lokasi'])->name('lokasi');
-Route::get('/tekpram', [HomeController::class, 'tekpram'])->name('tekpram');
-Route::get('/proker', [HomeController::class, 'proker'])->name('proker');
-Route::get('/bidang', [HomeController::class, 'bidang'])->name('bidang');
-Route::get('/kir', [HomeController::class, 'kir'])->name('kir');
-Route::get('/fbs', [HomeController::class, 'fbs'])->name('fbs');
-Route::get('/kelompok', [HomeController::class, 'kelompok'])->name('kelompok');
+Route::get('/adart', [HomeController::class, 'adart'])->name('adart');
+Route::get('/pramukars', [HomeController::class, 'pramukars'])->name('pramukars');
+Route::get('/data', [HomeController::class, 'data'])->name('data');
+Route::get('/struktur', [HomeController::class, 'struktur'])->name('struktur');
+Route::get('/gugusdepan', [HomeController::class, 'gugusdepan'])->name('gugusdepan');
+Route::get('/dewanambalan', [HomeController::class, 'dewanambalan'])->name('dewanambalan');
+Route::get('/dewanracana', [HomeController::class, 'dewanracana'])->name('dewanracana');
+Route::get('/unitprotokol', [HomeController::class, 'unitprotokol'])->name('unitprotokol');
+Route::get('/unitsearchandrescue', [HomeController::class, 'unitsearchandrescue'])->name('unitsearchandrescue');
+Route::get('/unitmediapers', [HomeController::class, 'unitmediapers'])->name('unitmediapers');
+Route::get('/programkerja', [HomeController::class, 'programkerja'])->name('programkerja');
+
 Route::get('/join', [HomeController::class, 'join'])->name('join');
 Route::post('/join', [HomeController::class, 'store'])->name('store');
 
