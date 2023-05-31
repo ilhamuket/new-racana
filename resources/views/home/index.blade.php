@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="trending-tittle">
-                            <strong>Berita Terbaru</strong>
+                            <strong>Berita </strong>
                             <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                             
                         </div>
