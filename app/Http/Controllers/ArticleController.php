@@ -21,23 +21,19 @@ class ArticleController extends Controller
 
     }
     public function index()
-    {
+{
+    $data = TmDataArticle::with('categories')
+        ->orderBy('created_at', 'desc') // Sort by the newest (based on the 'created_at' column)
+        ->get();
 
-        $data = TmDataArticle::with('categories')->get();
-
-        $dataVerif = $data->where('status', '1');
-
-        
-        
-        $totalVerif = $dataVerif->count();
-        $total = $data->count();
-
+    $dataVerif = $data->where('status', '1');
     
+    $totalVerif = $dataVerif->count();
+    $total = $data->count();
 
-        
+    return view('admin.article-index', compact('data', 'total', 'totalVerif'));
+}
 
-        return view('admin.article-index', compact('data','total','totalVerif') );
-    }
 
     public function show($id)
     {
