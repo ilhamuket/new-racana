@@ -73,275 +73,448 @@ class HomeController extends Controller
 
         return view('home.index',compact('data','trending','popular', 'kategori','inter'));
     }
-    public function profil(){
-    $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
-
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
-
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-
-                    $kategori = TmRefCategory::where('status', 1)->get();
-
-
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
-    }
     
     public function sandiambacana(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.index',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function logo(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+   $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+    $data = TmDataArticle::with('categories')
+    ->where('status', 1)
+    ->where('categories_id', '!=', 1)
+    ->orderBy('created_at', 'desc')
+    ->skip(1)
+    ->take(PHP_INT_MAX)
+    ->get();
+
+    $inter = TmDataArticle::with('categories')
+                    ->where('status', 1)
+                    ->where('categories_id', 1)
+                    ->orderBy('created_at', 'desc')
+                    ->limit(5)
+                    ->get();
 
     $popular = TmDataArticle::with('categories')
                     ->where('status', 1)
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
+
+    $kategori = TmRefCategory::where('status', 1)->get();
 
 
 
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.logo',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function adart(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
-
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.adart',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function pramukars(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.pramukars',compact('data','trending','popular', 'kategori','inter'));
     }
 
 
     public function data(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.data',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function struktur(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
-
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.struktur',compact('data','trending','popular', 'kategori','inter'));
     } 
 
     public function gugusdepan(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
-
-
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.gugusdepan',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function dewanambalan(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.dewanambalan',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function dewanracana(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.dewanracana',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function unitprotokol(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
-
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.unitprotokol',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function unitsearchandrescue(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.unitsearchandrescue',compact('data','trending','popular', 'kategori','inter'));
     }
     
     public function programkerja(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.programkerja',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function prestasi(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.prestasi',compact('data','trending','popular', 'kategori','inter'));
     }
 
     public function unitmediapers(){
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
 
-    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+        $data = TmDataArticle::with('categories')
+        ->where('status', 1)
+        ->where('categories_id', '!=', 1)
+        ->orderBy('created_at', 'desc')
+        ->skip(1)
+        ->take(PHP_INT_MAX)
+        ->get();
+    
+        $inter = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->where('categories_id', 1)
+                        ->orderBy('created_at', 'desc')
+                        ->limit(5)
+                        ->get();
+    
+        $popular = TmDataArticle::with('categories')
+                        ->where('status', 1)
+                        ->inRandomOrder()
+                        ->limit(5)
+                        ->get();
+    
+        $kategori = TmRefCategory::where('status', 1)->get();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
-                    $kategori = TmRefCategory::where('status', 1)->get();
 
-
-
-                    return view('home.index',compact('data','trending','popular', 'kategori'));
+                    return view('home.unitmediapers',compact('data','trending','popular', 'kategori','inter'));
     }
     
 
