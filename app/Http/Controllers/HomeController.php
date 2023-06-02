@@ -592,15 +592,27 @@ class HomeController extends Controller
 
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
         $item = TmDataArticle::with('categories')->where('status', 1)->where('id',$id)->first();
-        $popular = TmDataArticle::with('categories')
+        
+
+    $inter = TmDataArticle::with('categories')
+                    ->where('status', 1)
+                    ->where('categories_id', 1)
+                    ->orderBy('created_at', 'desc')
+                    ->limit(5)
+                    ->get();
+
+    $popular = TmDataArticle::with('categories')
                     ->where('status', 1)
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
 
+    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-        return view('home.detail',compact('item','trending','popular'));
+
+
+        return view('home.detail',compact('item','trending','popular','kategori','inter'));
     }
 
     public function detailKategori($id){
