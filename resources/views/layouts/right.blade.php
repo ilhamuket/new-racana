@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Berita Pramuka Nasional</h4>
-            @foreach ($popular as $pop)
+            @foreach ($inter as $pop)
                 <div class="trand-right-single d-flex">
                     <div class="trand-right-img">
                         <img src="{{ $pop->image_url }}" alt="" width="100" height="100">
@@ -21,7 +21,7 @@
             @foreach ($kategori as $kategories)
                 <div class="trand-right-single d-flex">
                     <div class="trand-right-cap">
-                        <h4><a href="{{ route('detail',$kategories->id) }}">{{ $kategories->name }}</a></h4>
+                        <h4><a href="{{ route('detailKategori',$kategories->id) }}">{{ $kategories->name }}</a></h4>
                     </div>
                 </div>
             @endforeach
