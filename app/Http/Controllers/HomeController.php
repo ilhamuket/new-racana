@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\TmDataArticle;
 use App\Models\TmDataPendaftar;
 use App\Helpers\ResponseFormatter;
+use App\Models\TmRefCategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -52,10 +53,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
+    $kategori = TmRefCategory::where('status', 1)->get();
 
 
 
-        return view('home.index',compact('data','trending','popular'));
+        return view('home.index',compact('data','trending','popular', 'kategori'));
     }
     public function profil(){
     $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
@@ -68,9 +70,11 @@ class HomeController extends Controller
                     ->limit(5)
                     ->get();
 
+                    $kategori = TmRefCategory::where('status', 1)->get();
 
 
-        return view('home.profile',compact('data','trending','popular'));
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
     
     public function sandiambacana(){
@@ -84,7 +88,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.sandiambacana',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function logo(){
@@ -98,7 +106,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.logo',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function adart(){
@@ -112,7 +124,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.adart',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function pramukars(){
@@ -126,7 +142,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.pramukars',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
 
@@ -141,7 +161,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.data',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function struktur(){
@@ -155,7 +179,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.data',compact('struktur','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     } 
 
     public function gugusdepan(){
@@ -169,7 +197,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.gugusdepan',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function dewanambalan(){
@@ -183,7 +215,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.dewanambalan',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function dewanracana(){
@@ -197,7 +233,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.dewanracana',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function unitprotokol(){
@@ -211,7 +251,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.unitprotokol',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function unitsearchandrescue(){
@@ -225,7 +269,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.unitsearchandrescue',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
     
     public function programkerja(){
@@ -239,7 +287,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.programkerja',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function prestasi(){
@@ -253,7 +305,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.prestasi',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
 
     public function unitmediapers(){
@@ -267,7 +323,11 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.unitmediapers',compact('data','trending','popular'));
+                    $kategori = TmRefCategory::where('status', 1)->get();
+
+
+
+                    return view('home.index',compact('data','trending','popular', 'kategori'));
     }
     
 
