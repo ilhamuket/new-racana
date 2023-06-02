@@ -76,7 +76,7 @@
                         <div class="trending-bottom mb-3">
                             <div class="container">
                                 <div class="row mb-3">
-                                    <h2>DEWAN AMBALAN AMBACANA ARS UNIVERSITY</h2>
+                                    <h2>SANDI AMBACANA ARS UNIVERSITY</h2>
                                 </div>
                                 <div class="row">
                                     <p>ini nantinya penjelasan logo.</p> <br>
@@ -95,7 +95,7 @@
     </div>
     <!-- Trending Area End -->
     <!--   Weekly-News start -->
-    @include('layouts.right')
+    @include('layouts.end-content')
                
     <!-- End Weekly-News -->
    <!-- Whats New Start -->
