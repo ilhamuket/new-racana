@@ -9,6 +9,9 @@ use App\Models\TmDataPendaftar;
 use App\Helpers\ResponseFormatter;
 use App\Models\TmRefCategory;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
@@ -50,9 +53,10 @@ class HomeController extends Controller
     ->where('status', 1)
     ->where('categories_id', '!=', 1)
     ->orderBy('created_at', 'desc')
-    ->skip(1)
-    ->take(PHP_INT_MAX)
-    ->get();
+    ->offset(1)
+    ->paginate(6);
+
+
 
     $inter = TmDataArticle::with('categories')
                     ->where('status', 1)

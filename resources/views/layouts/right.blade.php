@@ -1,7 +1,7 @@
 <div class="col-lg-4">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Berita Pramuka Nasional</h4>
+            <h4 class="card-title">Berita Pramuka</h4>
             @foreach ($inter as $pop)
                 <div class="trand-right-single d-flex">
                     <div class="trand-right-img">

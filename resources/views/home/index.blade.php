@@ -22,7 +22,21 @@
             <link rel="stylesheet" href="{{ URL::asset('/assets/css/slick.css') }}">
             <link rel="stylesheet" href="{{ URL::asset('/assets/css/nice-select.css') }}">
             <link rel="stylesheet" href="{{ URL::asset('/assets/css/style.css') }}">
+            
    </head>
+   <style>
+    .pagination .page-item .page-link {
+        color: #ff0000; /* Set your desired color here */
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #ff0000;
+        color: #ffffff; /* Set your desired color here */
+        border-color: #ffffff; /* Set your desired color here */
+    }
+</style>
+
+   
 
    <body>
        
@@ -98,6 +112,27 @@
                                             </div>
                                         </div>
                                     @endforeach
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination">
+                                                @if ($data->currentPage() > 1)
+                                                    <li class="page-item"><a class="page-link" href="{{ $data->previousPageUrl() }}">Previous</a></li>
+                                                @endif
+                        
+                                                @for ($i = 1; $i <= $data->lastPage(); $i++)
+                                                    <li class="page-item{{ $data->currentPage() == $i ? ' active' : '' }}">
+                                                        <a class="page-link" href="{{ $data->url($i) }}">{{ $i }}</a>
+                                                    </li>
+                                                @endfor
+                        
+                                                @if ($data->hasMorePages())
+                                                    <li class="page-item"><a class="page-link" href="{{ $data->nextPageUrl() }}">Next</a></li>
+                                                @endif
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 </div>
                             </div>
                         </div>
