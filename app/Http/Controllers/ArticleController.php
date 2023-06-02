@@ -69,8 +69,8 @@ class ArticleController extends Controller
             // Handle file upload
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
-                $imagePath = $image->store('images', 'public');
-                $imageUrl = Storage::disk('public')->url($imagePath);
+                $imagePath = $image->store('public/images');
+                $imageUrl = Storage::url($imagePath);
             }
 
             // CREATE TM DATA PANITIA
