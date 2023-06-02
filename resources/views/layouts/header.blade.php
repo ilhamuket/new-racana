@@ -36,16 +36,16 @@
                                         <li><a href="#">PROFIL AMBACANA</a>
                                             <ul class="submenu">
                                                 <li><a href="{{ route('logo') }}">LOGO AMBACANA</a></li>
-                                                <li><a href="#">PRAMUKA ARS</a></li>
+                                                <li><a href="pramukars">PRAMUKA ARS</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">SANDI AMBACANA</a></li>
+                                        <li><a href="{{ route('sandiambacana') }}">SANDI AMBACANA</a></li>
                                         <li><a href="#">ADMINISTRASI PRAMUKA ARS</a>
                                             <ul class="submenu">
                                                 <li><a href="{{ route('adart') }}">AD & ART</a></li>
                                                 <li><a href="{{ route('pramukars') }}">PRAMUKA ARS</a></li>
                                                 <li><a href="{{ route('data') }}">DATA POTENSI</a></li>
-                                                <li><a href="{{ route('struktur') }}">STRUKTUR KEPENGURUSAN</a>
+                                                <li><a href="#">STRUKTUR KEPENGURUSAN</a>
                                                     <ul class="submenu">
                                                         <li><a href="{{ route('gugusdepan') }}">GUGUS DEPAN</a></li>
                                                         <li><a href="{{ route('dewanambalan') }}">DEWAN AMBALAN</a></li>
@@ -61,7 +61,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="{{ route('programkerja') }}">PROGRAM KERJA</a></li>
-                                            <li><a href="{{ route('sandi') }}">PRESTASI</a></li>
+                                            <li><a href="{{ route('prestasi') }}">PRESTASI</a></li>
                                     </ul>
                                 </nav>
                             </div>

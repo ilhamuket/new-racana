@@ -68,7 +68,7 @@
                         <div class="trending-top mb-30">
                             
                             <div class="trend-top-img">
-                                <img src="{{ $trending->image_url }}" alt="" width="300">
+                                <img src="build/img/trending/pramuka3.jpg" alt="" width="300">
                             </div>
                             
                         </div>
@@ -76,10 +76,10 @@
                         <div class="trending-bottom mb-3">
                             <div class="container">
                                 <div class="row mb-3">
-                                    <h2>ADART AMBACANA ARS UNIVERSITY</h2>
+                                    <h2>PRESTASI AMBACANA ARS UNIVERSITY</h2>
                                 </div>
                                 <div class="row">
-                                    <p>ini nantinya penjelasan logo.</p> <br>
+                                    <p>ini nantinya bidang.</p> <br>
                                     
                                 </div>
                             </div>

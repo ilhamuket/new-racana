@@ -25,7 +25,7 @@ Route::get('/welcome', function () {
 
 //home
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/sandi', [HomeController::class, 'sandi'])->name('sandi');
+Route::get('/sandiambacana', [HomeController::class, 'sandiambacana'])->name('sandiambacana');
 Route::get('/detail/{id}', [HomeController::class, 'detail'])->name('detail');
 Route::get('/profil', [HomeController::class, 'profil'])->name('profil');
 Route::get('/logo', [HomeController::class, 'logo'])->name('logo');
@@ -40,6 +40,7 @@ Route::get('/unitprotokol', [HomeController::class, 'unitprotokol'])->name('unit
 Route::get('/unitsearchandrescue', [HomeController::class, 'unitsearchandrescue'])->name('unitsearchandrescue');
 Route::get('/unitmediapers', [HomeController::class, 'unitmediapers'])->name('unitmediapers');
 Route::get('/programkerja', [HomeController::class, 'programkerja'])->name('programkerja');
+Route::get('/prestasi', [HomeController::class, 'prestasi'])->name('prestasi');
 
 Route::get('/join', [HomeController::class, 'join'])->name('join');
 Route::post('/join', [HomeController::class, 'store'])->name('store');

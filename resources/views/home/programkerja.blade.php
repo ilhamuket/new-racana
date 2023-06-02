@@ -68,7 +68,7 @@
                         <div class="trending-top mb-30">
                             
                             <div class="trend-top-img">
-                                <img src="{{ $trending->image_url }}" alt="" width="300">
+                                <img src="build/img/trending/pramuka3.jpg" alt="" width="300">
                             </div>
                             
                         </div>
@@ -76,11 +76,16 @@
                         <div class="trending-bottom mb-3">
                             <div class="container">
                                 <div class="row mb-3">
-                                    <h2>ADART AMBACANA ARS UNIVERSITY</h2>
+                                    <h2>PROGRAMKERJA AMBACANA ARS UNIVERSITY</h2>
                                 </div>
                                 <div class="row">
-                                    <p>ini nantinya penjelasan logo.</p> <br>
-                                    
+                                    <p>UKM Pramuka ARS merupakan unit kegiatan mahasiswa ARS yang dapat mengembangkan minat dan bakat serta karakter pada anggota. Berkegiatan pramuka akan banyak berbagai bentuk yang dapat mengembangkan karakter seperti cinta tanah air, komunikatif dan bersahabat, disiplin, jujur, dan bertanggung jawab, serta berjiwa sosial.</p> <br>
+                                    <p>Dalam UU No.12 Tahun 2010 tentang Gerakan Pramuka Pasal 11 dan pasal 12 yang menyebutkan bahwa “Pendidikan kepramukaan dalam sistem pendidikan Nasional termasuk jalur pendidikan nonformal yang diperkaya dengan pendidikan nilai nilai gerakan pramuka dalam pembentukan kepribadian dan berakhlak mulia, berjiwa patriot, taat hukum, disiplin, menjunjung nilai nilai luhur bangsa dan memiliki kecakapan hidup”.</p> <br>
+                                    <p>UKM ini dinamakan “Gatot Mangkupradja ” untuk putra dan “Dewi Sartika” untuk putri. Berbagai kegiatan di UKM pramuka ARS yang jadi unggulan, yaitu terdapat 2 unit.</p>
+                                    <ul class="numbered-list">
+                                        <li class="mb-2">1. Unit protokoler, merupakan unit kegiatan yang untuk mengembangkan bakan di bidang acara, masater of ceremony (MC).</li>
+                                        <li>2. Unit SAR, merupakan unit dalam bentuk kegiatan mitigasi bencana baik dalam pertolongan ataupun pencegahan.</li>
+                                      </ul>
                                 </div>
                             </div>
                         </div>

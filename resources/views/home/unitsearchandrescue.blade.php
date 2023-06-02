@@ -76,7 +76,7 @@
                         <div class="trending-bottom mb-3">
                             <div class="container">
                                 <div class="row mb-3">
-                                    <h2>LOGO AMBACANA ARS UNIVERSITY</h2>
+                                    <h2>UNIT SEARCH AND RESCUE AMBACANA ARS UNIVERSITY</h2>
                                 </div>
                                 <div class="row">
                                     <p>ini nantinya penjelasan logo.</p> <br>

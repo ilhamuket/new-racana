@@ -72,7 +72,8 @@ class HomeController extends Controller
 
         return view('home.profile',compact('data','trending','popular'));
     }
-    public function sandi(){
+    
+    public function sandiambacana(){
 
         $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
@@ -83,7 +84,7 @@ class HomeController extends Controller
                     ->inRandomOrder()
                     ->limit(5)
                     ->get();
-        return view('home.sandi',compact('data','trending','popular'));
+        return view('home.sandiambacana',compact('data','trending','popular'));
     }
 
     public function logo(){
@@ -239,6 +240,34 @@ class HomeController extends Controller
                     ->limit(5)
                     ->get();
         return view('home.programkerja',compact('data','trending','popular'));
+    }
+
+    public function prestasi(){
+
+        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+
+    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+
+    $popular = TmDataArticle::with('categories')
+                    ->where('status', 1)
+                    ->inRandomOrder()
+                    ->limit(5)
+                    ->get();
+        return view('home.prestasi',compact('data','trending','popular'));
+    }
+
+    public function unitmediapers(){
+
+        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
+
+    $data = TmDataArticle::with('categories')->where('status', 1)->get();
+
+    $popular = TmDataArticle::with('categories')
+                    ->where('status', 1)
+                    ->inRandomOrder()
+                    ->limit(5)
+                    ->get();
+        return view('home.unitmediapers',compact('data','trending','popular'));
     }
     
 
