@@ -85,8 +85,8 @@ class ArticleController extends Controller
             ]);
             
             DB::commit();
-            
-            return ResponseFormatter::success($panitia);
+            Session::flash('success', 'Sukses tambah data');
+            return redirect()->back();
         } catch (\Exception $e) {
             DB::rollBack();
 
@@ -96,7 +96,8 @@ class ArticleController extends Controller
                 'line' => $e->getLine(),
             ];
 
-            return ResponseFormatter::error($data);
+            Session::flash('error', 'Gagal tambah data');
+        return redirect()->back();
         }
     }
 
@@ -134,24 +135,50 @@ class ArticleController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        $newdata = TmDataArticle::where('id', $id)->first();
+{
+    $data = $request->validate([
+        'name' => 'required|string',
+        'description' => 'required|string',
+        'categories_id' => 'required',
+        'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    try {
         DB::beginTransaction();
 
-        try {
-            $data = $request->all();
-            $newdata->update($data);
-            DB::commit();
-            
-            Session::flash('success', 'Sukses Edit data');
-            return redirect()->back();
-        } catch (Exception $exception) {
-            DB::rollBack();
-            Log::error($exception->getMessage() . $exception->getTraceAsString());
-            
-            Session::flash('error', 'Gagal Edit data');
-            return redirect()->back();
+        $newdata = TmDataArticle::findOrFail($id);
+
+        // Handle image update
+        if ($request->hasFile('image_url')) {
+            $image = $request->file('image_url');
+            $imagePath = $image->store('public/images');
+            $imageUrl = Storage::url($imagePath);
+
+            // Delete the previous image if it exists
+            if ($newdata->image_url) {
+                Storage::delete($newdata->image_url);
+            }
+
+            $newdata->image_url = $imageUrl;
         }
+
+        $newdata->name = $data['name'];
+        $newdata->description = $data['description'];
+        $newdata->categories_id = $data['categories_id'];
+        $newdata->save();
+
+        DB::commit();
+
+        Session::flash('success', 'Sukses Edit data');
+        return redirect()->back();
+    } catch (Exception $exception) {
+        DB::rollBack();
+        Log::error($exception->getMessage() . $exception->getTraceAsString());
+
+        Session::flash('error', 'Gagal Edit data');
+        return redirect()->back();
     }
+}
+
 
 }
