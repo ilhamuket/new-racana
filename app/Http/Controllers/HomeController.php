@@ -76,39 +76,36 @@ class HomeController extends Controller
 
 
         return view('home.index',compact('data','trending','popular', 'kategori','inter'));
-    }
+        }
     
-    public function sandiambacana(){
-
-        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
-
-        $data = TmDataArticle::with('categories')
-        ->where('status', 1)
-        ->where('categories_id', '!=', 1)
-        ->orderBy('created_at', 'desc')
-        ->skip(1)
-        ->take(PHP_INT_MAX)
-        ->get();
-    
-        $inter = TmDataArticle::with('categories')
-                        ->where('status', 1)
-                        ->where('categories_id', 1)
-                        ->orderBy('created_at', 'desc')
-                        ->limit(5)
-                        ->get();
-    
-        $popular = TmDataArticle::with('categories')
-                        ->where('status', 1)
-                        ->inRandomOrder()
-                        ->limit(5)
-                        ->get();
-    
-        $kategori = TmRefCategory::where('status', 1)->get();
-
-
-
-                    return view('home.index',compact('data','trending','popular', 'kategori','inter'));
-    }
+        public function sandiambacana()
+        {
+            $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
+        
+            $data = TmDataArticle::with('categories')
+                ->where('status', 1)
+                ->where('categories_id', '!=', 1)
+                ->orderBy('created_at', 'desc')
+                ->paginate(6); // Use paginate() instead of get()
+        
+            $inter = TmDataArticle::with('categories')
+                ->where('status', 1)
+                ->where('categories_id', 1)
+                ->orderBy('created_at', 'desc')
+                ->limit(5)
+                ->get();
+        
+            $popular = TmDataArticle::with('categories')
+                ->where('status', 1)
+                ->inRandomOrder()
+                ->limit(5)
+                ->get();
+        
+            $kategori = TmRefCategory::where('status', 1)->get();
+        
+            return view('home.index', compact('data', 'trending', 'popular', 'kategori', 'inter'));
+        }
+        
 
     public function logo(){
 
