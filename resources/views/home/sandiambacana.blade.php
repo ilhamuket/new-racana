@@ -65,12 +65,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <!-- Trending Top -->
-                        <div class="trending-top mb-30">
-                            
-                            <div class="trend-top-img">
-                                <img src="{{ $trending->image_url }}" alt="" width="300">
-                            </div>
-                            
+                       
                         </div>
                         <!-- Trending Bottom -->
                         <div class="trending-bottom mb-3">
@@ -79,8 +74,31 @@
                                     <h2>SANDI AMBACANA ARS UNIVERSITY</h2>
                                 </div>
                                 <div class="row">
-                                    <p>ini nantinya penjelasan logo.</p> <br>
-                                    
+                                 
+</div>
+<div>
+    <p>Wahay pandega ………….</p>  <br>
+    <p>Racana Gatot Mangkupraja – Dewi Sartika </p>  <br>
+    <p>Maju untuk jadi kesatria </p>  <br>
+    <p>Berjuang demi sebuah kehormatan </p>  <br>
+    <p>Berbakti untuk Negeri </p>  <br>
+    <p>Disanalah aku berdiri </p>  <br>
+    <p>Wahay pandega……….. </p>  <br>
+    <p>Bersihkan diri dari iri dan dengki </p>  <br>
+    <p>Eratkan tali persaudaraan </p>  <br>
+    <p>Berkatalah yang nyata </p>  <br>
+    <p>Bukan belarti dua </p>  <br>
+    <p>Itulah janji diri </p>  <br>
+    <p>Wahay pandega……….. </p>  <br>
+    <p>Cari lah ilmu pengetahuan dan keterampilan </p>  <br>
+    <p>Menumpas kebodohan  </p>  <br>
+    <p>Berperang dengan kegelapan  </p>  <br>
+    <p>Menjunjung tinggi keberanian </p>  <br>
+    <p>Darma Bakti menjadi pedoman </p>  <br>
+    <p>Satya kami adalah janji </p>  <br>
+    <p>Untuk mengabdi pada ibu pertiwi </p>  <br>
+    <p>Itulah cita – cita Ambacana Gatot Mangkupradja – Dewi Sartika  </p>  <br>
+</div>
                                 </div>
                             </div>
                         </div>

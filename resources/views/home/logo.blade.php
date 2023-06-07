@@ -62,28 +62,49 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row ">
                     <div class="col-lg-8">
                         <!-- Trending Top -->
-                        <div class="trending-top mb-30">
-                            
-                            <div class="trend-top-img">
-                                <img src="{{ $trending->image_url }}" alt="" width="300">
-                            </div>
-                            
-                        </div>
-                        <!-- Trending Bottom -->
-                        <div class="trending-bottom mb-3">
-                            <div class="container">
+                        <div class="trending mb-30"  >
                                 <div class="row mb-3">
                                     <h2>LOGO AMBACANA ARS UNIVERSITY</h2>
                                 </div>
-                                <div class="row">
-                                    <p>ini nantinya penjelasan logo.</p> <br>
-                                    
-                                </div>
+                            <div class="row justify-content-center">
+                                 <img style="width: 10cm"  src="..\assets\img\logo_racana\logo.png" >
                             </div>
+                            <div class="row" >       
+
+<p class="font-weight-bold" >KIASAN DASAR </p> 
+</div>
+<div>
+<P class="font-weight-bold"> 1. Lima Sudut </p> <br>
+    <p>Melambangkan 5 sila yang ada di indonesia yaitu PANCASILA </p>  <br>
+<P class="font-weight-bold"> 2. Garis Hitam </p> <br>
+    <p>Melambangkan Keseriusan dan kekuatan </p>  <br>
+<P class="font-weight-bold"> 3. Warna Coklat Pada Tunas dan Warna Kuning Pada Tusu Konde </p> <br>
+    <p>Melambangkan Warna Pandega dan Penegak </p>  <br>
+<P class="font-weight-bold"> 4. Gedung Sate </p> <br>
+    <p>Ciri Khas Daerah Pramuka Jawa Barat </p>  <br>
+<P class="font-weight-bold"> 5. Kujang </p> <br>
+    <p>Senjata Khas Jawa Barat </p>  <br>
+<P class="font-weight-bold"> 6. 2 Tunas Kelapa </p> <br>
+    <p>Melambangkan Gerakan Pramuka dan Melambangkan Putra Putri Satuan terpisah </p>  <br>
+<P class="font-weight-bold"> 7. 10 Libang Pada Kujang </p> <br>
+    <p>Melambangkan 10 Point Dasa Dharma Gerakan Pramuka </p>  <br>
+ <P class="font-weight-bold"> 8. 3 Tingkat Gedung Sate </p> <br>
+    <p>Melambangkan 3 Janji Yang Ada di Gerakan Pramuka yaitu TRI SATYA </p>  <br>
+<P class="font-weight-bold"> 9. Tulisan ARS University </p> <br>
+    <p>Tempat Naungan atau Gugus Depan </p>  <br>
+<P class="font-weight-bold"> 10. Tulisan Gatot Mangkupradja - Dewi Sartika </p> <br>
+    <p>Melambangkan Nama Ambalan dan Racana Yang Diambil dari tokoh Pahlawan </p>  <br>
+<P class="font-weight-bold"> 11. Warna Putih Pada Tulisan </p> <br>
+    <p>Melambangkan Kesucian </p>  <br>
+<P class="font-weight-bold"> 12. Buku dan Tusu Konde </p> <br>
+    <p>Ciri Khas dari Dewi Sartika </p>  <br>
+
+</div>
                         </div>
+                        
                         
                     </div>
                     <!-- Riht content -->

@@ -76,7 +76,7 @@
                         <div class="trending-bottom mb-3">
                             <div class="container">
                                 <div class="row mb-3">
-                                    <h2>ADART AMBACANA ARS UNIVERSITY</h2>
+                                    <h2>AD - ART AMBACANA ARS UNIVERSITY</h2>
                                 </div>
                                 <div class="row">
                                     <p>ini nantinya penjelasan logo.</p> <br>
