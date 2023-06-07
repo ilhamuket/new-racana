@@ -28,6 +28,10 @@
       list-style-type: decimal; /* Use decimal numbering */
       padding-left: 20px; /* Add left padding to align the numbers */
     }
+
+    .paragraph {
+        margin-bottom: 10px;
+    }
   </style>
 
    <body>
@@ -65,7 +69,12 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <!-- Trending Top -->
-                       
+                        <div class="trending-top mb-30">
+                            
+                            <div class="trend-top-img">
+                                <img src="build/img/trending/pramuka3.jpg" alt="" width="300">
+                            </div>
+                            
                         </div>
                         <!-- Trending Bottom -->
                         <div class="trending-bottom mb-3">
@@ -73,35 +82,33 @@
                                 <div class="row mb-3">
                                     <h2>SANDI AMBACANA ARS UNIVERSITY</h2>
                                 </div>
-                                <div class="row">
-                                 
-</div>
-<div>
-    <p>Wahay pandega ………….</p>  <br>
-    <p>Racana Gatot Mangkupraja – Dewi Sartika </p>  <br>
-    <p>Maju untuk jadi kesatria </p>  <br>
-    <p>Berjuang demi sebuah kehormatan </p>  <br>
-    <p>Berbakti untuk Negeri </p>  <br>
-    <p>Disanalah aku berdiri </p>  <br>
-    <p>Wahay pandega……….. </p>  <br>
-    <p>Bersihkan diri dari iri dan dengki </p>  <br>
-    <p>Eratkan tali persaudaraan </p>  <br>
-    <p>Berkatalah yang nyata </p>  <br>
-    <p>Bukan belarti dua </p>  <br>
-    <p>Itulah janji diri </p>  <br>
-    <p>Wahay pandega……….. </p>  <br>
-    <p>Cari lah ilmu pengetahuan dan keterampilan </p>  <br>
-    <p>Menumpas kebodohan  </p>  <br>
-    <p>Berperang dengan kegelapan  </p>  <br>
-    <p>Menjunjung tinggi keberanian </p>  <br>
-    <p>Darma Bakti menjadi pedoman </p>  <br>
-    <p>Satya kami adalah janji </p>  <br>
-    <p>Untuk mengabdi pada ibu pertiwi </p>  <br>
-    <p>Itulah cita – cita Ambacana Gatot Mangkupradja – Dewi Sartika  </p>  <br>
-</div>
+                                <div>
+                                    <p class="paragraph">Wahay pandega ………….</p>
+                                    <p class="paragraph">Racana Gatot Mangkupraja – Dewi Sartika</p>
+                                    <p class="paragraph">Maju untuk jadi kesatria</p>
+                                    <p class="paragraph">Berjuang demi sebuah kehormatan</p>
+                                    <p class="paragraph">Berbakti untuk Negeri</p>
+                                    <p class="paragraph">Disanalah aku berdiri</p>
+                                    <p class="paragraph">Wahay pandega………..</p>
+                                    <p class="paragraph">Bersihkan diri dari iri dan dengki</p>
+                                    <p class="paragraph">Eratkan tali persaudaraan</p>
+                                    <p class="paragraph">Berkatalah yang nyata</p>
+                                    <p class="paragraph">Bukan belarti dua</p>
+                                    <p class="paragraph">Itulah janji diri</p>
+                                    <p class="paragraph">Wahay pandega………..</p>
+                                    <p class="paragraph">Cari lah ilmu pengetahuan dan keterampilan</p>
+                                    <p class="paragraph">Menumpas kebodohan</p>
+                                    <p class="paragraph">Berperang dengan kegelapan</p>
+                                    <p class="paragraph">Menjunjung tinggi keberanian</p>
+                                    <p class="paragraph">Darma Bakti menjadi pedoman</p>
+                                    <p class="paragraph">Satya kami adalah janji</p>
+                                    <p class="paragraph">Untuk mengabdi pada ibu pertiwi</p>
+                                    <p class="paragraph">Itulah cita – cita Ambacana Gatot Mangkupradja – Dewi Sartika</p>
                                 </div>
                             </div>
                         </div>
+                        
+                        
                         
                     </div>
                     <!-- Riht content -->

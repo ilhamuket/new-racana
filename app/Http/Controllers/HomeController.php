@@ -103,7 +103,7 @@ class HomeController extends Controller
         
             $kategori = TmRefCategory::where('status', 1)->get();
         
-            return view('home.index', compact('data', 'trending', 'popular', 'kategori', 'inter'));
+            return view('home.sandiambacana', compact('data', 'trending', 'popular', 'kategori', 'inter'));
         }
         
 
