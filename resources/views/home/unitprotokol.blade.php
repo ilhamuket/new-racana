@@ -28,6 +28,10 @@
       list-style-type: decimal; /* Use decimal numbering */
       padding-left: 20px; /* Add left padding to align the numbers */
     }
+
+    .paragraph {
+        margin-bottom: 10px;
+    }
   </style>
 
    <body>
@@ -68,7 +72,7 @@
                         <div class="trending-top mb-30">
                             
                             <div class="trend-top-img">
-                                <img src="{{ $trending->image_url }}" alt="" width="300">
+                                <img src="..\assets\img\unit\protokoler.jpg" alt="" width="300">
                             </div>
                             
                         </div>
@@ -76,14 +80,25 @@
                         <div class="trending-bottom mb-3">
                             <div class="container">
                                 <div class="row mb-3">
-                                    <h2>UNIT PROTOKOL AMBACANA ARS UNIVERSITY</h2>
+                                    <h2>UNIT PROTOKOL PRAMUKA ARS UNIVERSITY</h2>
                                 </div>
-                                <div class="row">
-                                    <p>ini nantinya penjelasan logo.</p> <br>
-                                    
+                                     
+                                <div >
+                                    <p>Protokoler dalam artian luas merupakan seluruh hal yang mengatur pelaksanaan suatu kegiatan baik kedinasn/kantor maupun masyarakat mau itu formal ataupun non formal. </p> <br>
+                                    <p>Keprotokolan adal serangkaian kegiatan yang berkaitan dengan aturan dalam acara resmi yang meliputi Tata Tempat, Tata Upacara, dan Tata Penghormatan sebagai bentuk penghormatan kepada seseorang sesui dengan jabatan dan atau kedudukannya dengan negara, pemerintah, atau masyarakat. Didalam protokoler Pramuka Gugus Depan Universitas Adhirajasa Reswara Sanjaya (ARS University) mempunyai beberapa bidang, yaitu : </p> <br>
+                                    <p>1. Bidang Acara Kegiatan / Master Of Ceremony </p> <br>
+                                    <p>2. Bidang Tata Tempat </p> <br>
+                                    <p>3. Bidang Tata Upacara </p> <br>
+                                    <p>4. Bidang Tata Penghormatan </p> <br>
+
+
                                 </div>
                             </div>
-                        </div>
+                        
+                        
+                    </div>
+                        
+                        
                         
                     </div>
                     <!-- Riht content -->
