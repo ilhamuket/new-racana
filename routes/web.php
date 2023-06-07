@@ -27,6 +27,7 @@ Route::get('/welcome', function () {
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/sandiambacana', [HomeController::class, 'sandiambacana'])->name('sandiambacana');
 Route::get('/detail/{id}', [HomeController::class, 'detail'])->name('detail');
+Route::get('/kategori/{id}', [HomeController::class, 'detailKategori'])->name('detailKategori');
 Route::get('/profil', [HomeController::class, 'profil'])->name('profil');
 Route::get('/logo', [HomeController::class, 'logo'])->name('logo');
 Route::get('/adart', [HomeController::class, 'adart'])->name('adart');

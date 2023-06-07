@@ -43,7 +43,7 @@
                                         <li><a href="#">ADMINISTRASI PRAMUKA ARS</a>
                                             <ul class="submenu">
                                                 <li><a href="{{ route('adart') }}">AD & ART</a></li>
-                                                <li><a href="{{ route('pramukars') }}">PRAMUKA ARS</a></li>
+                                                
                                                 <li><a href="{{ route('data') }}">DATA POTENSI</a></li>
                                                 <li><a href="#">STRUKTUR KEPENGURUSAN</a>
                                                     <ul class="submenu">

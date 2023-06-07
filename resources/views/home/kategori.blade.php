@@ -23,12 +23,6 @@
             <link rel="stylesheet" href="{{ URL::asset('/assets/css/nice-select.css') }}">
             <link rel="stylesheet" href="{{ URL::asset('/assets/css/style.css') }}">
    </head>
-   <style>
-    ul.numbered-list {
-      list-style-type: decimal; /* Use decimal numbering */
-      padding-left: 20px; /* Add left padding to align the numbers */
-    }
-  </style>
 
    <body>
        
@@ -56,7 +50,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="trending-tittle">
-                            
+                            <strong>Berita </strong>
                             <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                             
                         </div>
@@ -65,20 +59,48 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <!-- Trending Top -->
-                        <!-- Trending Bottom -->
-                        <div class="trending-bottom mb-3">
-                            <div class="container">
-                              <div class="row mb-3">
-                                <h2 class="text-center">Struktur Kepengurusan Gugus Depan Ambacana <br> Ars University</h2>
-                              </div>
-                              <div class="row" id="pdf-viewer">
-                                <div class="col-lg-12 d-flex justify-content-center align-items-center">
-                                  <canvas id="pdf-canvas"></canvas>
+                        <div class="trending-top mb-30">
+                            
+                            <div class="trend-top-img">
+                                <img src="{{ $trending->image_url }}" alt="" width="300" height="500">
+                                <div class="trend-top-cap">
+                                    <span>{{ $trending->categories->name }}</span>
+                                    <h2><a href="{{ route('detail',$trending->id) }}">{{ $trending->name }}</a></h2>
                                 </div>
-                              </div>
+                            </div>
+                            
+                        </div>
+                        <!-- Trending Bottom -->
+                        <div class="trending-bottom">
+                            <div class="container">
+                                <div class="row">
+                                    @foreach ($data as $item)
+                                        <div class="col-lg-4">
+                                            <div class="single-bottom mb-35">
+                                                <div class="trend-bottom-img mb-30">
+                                                    <img src="{{ $item->image_url }}" alt="" width="200" height="150">
+                                                </div>
+                                                <div class="trend-bottom-cap">
+                                                    <span class="color1">{{ $item->categories->name }}</span>
+                                                    <h4><a href="{{ route('detail',$item->id) }}">{{ $item->name }}</a></h4>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <h6 class="text-muted"><i class="
+                                                                    fas fa-eye"></i> {{ $item->views }}</h6>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <h6 class="text-muted"><i class="
+                                                                far fa-calendar"></i> {{ $item->updated_at->format('m/Y') }}
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
-                          
                         
                     </div>
                     <!-- Riht content -->
@@ -92,31 +114,14 @@
     <!--   Weekly-News start -->
     @include('layouts.end-content')
                
-    <!-- End Weekly-News -->
-   <!-- Whats New Start -->
-   
-    <!-- Whats New End -->
-    <!--   Weekly2-News start -->
-          
-    <!-- End Weekly-News -->
-    <!-- Start Youtube -->
-   
-    <!-- End Start youtube -->
-    <!--  Recent Articles start -->
-          
-    <!--Recent Articles End -->
-    <!--Start pagination -->
-
-    <!-- End pagination  -->
+ 
     </main>
     
    @include('layouts.footer2')
    
 	<!-- JS here -->
-    {{ URL::asset('/build/css/bootstrap.min.css') }}
+    
 		<!-- All JS Custom Plugins Link Here here -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-
         <script src="{{ URL::asset('/assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
 		<!-- Jquery, Popper, Bootstrap -->
 		<script src="{{ URL::asset('/assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -154,39 +159,6 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="{{ URL::asset('/assets/js/plugins.js') }}"></script>
         <script src="{{ URL::asset('/assets/js/main.js') }}"></script>
-        <script>
-            // Get the path to your PDF file
-            var pdfPath = "/assets/pdf/gudep.pdf";
-          
-            // PDF.js configuration options
-            var pdfjsLib = window['pdfjs-dist/build/pdf'];
-          
-            // Load the PDF document
-            pdfjsLib.getDocument(pdfPath).promise.then(function(pdf) {
-              // Get the first page of the PDF
-              return pdf.getPage(1);
-            }).then(function(page) {
-              var canvas = document.getElementById('pdf-canvas');
-              var context = canvas.getContext('2d');
-          
-              // Set the desired scale (e.g., 2 for double the size)
-              var scale = 1.5;
-          
-              // Get the viewport of the page at the desired scale
-              var viewport = page.getViewport({ scale: scale });
-          
-              // Set the canvas size to match the viewport
-              canvas.width = viewport.width;
-              canvas.height = viewport.height;
-          
-              // Render the page content on the canvas
-              var renderContext = {
-                canvasContext: context,
-                viewport: viewport
-              };
-              page.render(renderContext);
-            });
-        </script>
         
     </body>
 </html>

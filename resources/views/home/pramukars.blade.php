@@ -67,14 +67,25 @@
                         <!-- Trending Top -->
                         <div class="trending-top mb-30">
                             
+                            <div class="trend-top-img">
+                                <img src="build/img/trending/pramuka3.jpg" alt="" width="300">
+                            </div>
+                            
                         </div>
                         <!-- Trending Bottom -->
                         <div class="trending-bottom mb-3">
                             <div class="container">
-                                <div class="row mb-2">
-                                    <h2>NAMA AMBALAN DAN RACANA PRAMUKA </h2>
-                                    <h2> UNIVERSITAS ADHIRAJASA RESWARA SANJAYA</h2>
-                                    
+                                <div class="row mb-3">
+                                    <h2>PRAMUKA ARS UNIVERSITY</h2>
+                                </div>
+                                <div class="row">
+                                    <p>UKM Pramuka ARS merupakan unit kegiatan mahasiswa ARS yang dapat mengembangkan minat dan bakat serta karakter pada anggota. Berkegiatan pramuka akan banyak berbagai bentuk yang dapat mengembangkan karakter seperti cinta tanah air, komunikatif dan bersahabat, disiplin, jujur, dan bertanggung jawab, serta berjiwa sosial.</p> <br>
+                                    <p>Dalam UU No.12 Tahun 2010 tentang Gerakan Pramuka Pasal 11 dan pasal 12 yang menyebutkan bahwa “Pendidikan kepramukaan dalam sistem pendidikan Nasional termasuk jalur pendidikan nonformal yang diperkaya dengan pendidikan nilai nilai gerakan pramuka dalam pembentukan kepribadian dan berakhlak mulia, berjiwa patriot, taat hukum, disiplin, menjunjung nilai nilai luhur bangsa dan memiliki kecakapan hidup”.</p> <br>
+                                    <p>UKM ini dinamakan “Gatot Mangkupradja ” untuk putra dan “Dewi Sartika” untuk putri. Berbagai kegiatan di UKM pramuka ARS yang jadi unggulan, yaitu terdapat 2 unit.</p>
+                                    <ul class="numbered-list">
+                                        <li class="mb-2">1. Unit protokoler, merupakan unit kegiatan yang untuk mengembangkan bakan di bidang acara, masater of ceremony (MC).</li>
+                                        <li>2. Unit SAR, merupakan unit dalam bentuk kegiatan mitigasi bencana baik dalam pertolongan ataupun pencegahan.</li>
+                                      </ul>
                                 </div>
 
                                <div class="row" >       
@@ -112,24 +123,7 @@
                         
                     </div>
                     <!-- Riht content -->
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Berita Populer</h4>
-                                @foreach ($popular as $pop)
-                                    <div class="trand-right-single d-flex">
-                                        <div class="trand-right-img">
-                                            <img src="{{ $pop->image_url }}" alt="" width="100" height="100">
-                                        </div>
-                                        <div class="trand-right-cap">
-                                            <span class="color1">{{ $pop->categories->name }}</span>
-                                            <h4><a href="{{ route('detail',$pop->id) }}">{{ $pop->name }}</a></h4>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
+                    @include('layouts.right')
                     
                 </div>
             </div>
@@ -137,37 +131,7 @@
     </div>
     <!-- Trending Area End -->
     <!--   Weekly-News start -->
-    <div class="weekly-news-area pt-50">
-        <div class="container">
-            <div class="weekly-wrapper">
-                <!-- section Tittle -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle mb-30">
-                            <h3>Berita Populer Mingguan</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="weekly-news-active dot-style d-flex dot-style">
-                            @foreach ($popular as $item)
-                                <div class="weekly-single">
-                                    <div class="weekly-img">
-                                        <img src="{{ $item->image_url }}" alt="" height="400">
-                                    </div>
-                                    <div class="weekly-caption">
-                                        <span class="color1">{{ $item->categories->name }}</span>
-                                        <h4><a href="{{ route('detail',$item->id) }}">{{ $item->name }}</a></h4>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('layouts.end-content')
                
     <!-- End Weekly-News -->
    <!-- Whats New Start -->

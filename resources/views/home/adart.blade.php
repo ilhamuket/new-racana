@@ -28,145 +28,69 @@
       list-style-type: decimal; /* Use decimal numbering */
       padding-left: 20px; /* Add left padding to align the numbers */
     }
+
+    #pdf-viewer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .pdf-page {
+    margin-bottom: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden;
+    max-width: 100%; /* Disable horizontal scrolling */
+    max-height: 110vh; /* Set maximum height to viewport height */
+  }
   </style>
 
    <body>
-       
-    <!-- Preloader Start -->
-    <!-- <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Preloader Start -->
 
     @include('layouts.header')
 
     <main>
-    <!-- Trending Area Start -->
-    <div class="trending-area fix">
-        <div class="container">
+        <!-- Trending Area Start -->
+        <div class="trending-area fix">
+          <div class="container">
             <div class="trending-main">
-                <!-- Trending Tittle -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="trending-tittle">
-                            
-                            <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                            
-                        </div>
-                    </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="trending-tittle">
+                    <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+                  </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <!-- Trending Top -->
-                        <div class="trending-top mb-30">
-                            
-                            <div class="trend-top-img">
-                                <img src="{{ $trending->image_url }}" alt="" width="300">
-                            </div>
-                            
-                        </div>
-                        <!-- Trending Bottom -->
-                        <div class="trending-bottom mb-3">
-                            <div class="container">
-                                <div class="row mb-3">
-                                    <h2>AD - ART AMBACANA ARS UNIVERSITY</h2>
-                                </div>
-                                <div class="row">
-                                    <p>ini nantinya penjelasan logo.</p> <br>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
+              </div>
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="trending-bottom mb-3">
+                    <div class="container">
+                      <div class="row mb-3">
+                        <h3 class="text-center">ANGGARAN DASAR RACANA GATOT MANGKUPRAJA - RD. DEWI SARTIKA <br>
+                          GUGUS DEPAN - PANGKALAN UNIVERSITAS ADHIRAJASA RESWARA SANJAYA PERIODE 2022/2023</h3>
+                      </div>
+                      <div class="row mt-3" id="pdf-viewer">
+                        <!-- Canvas elements will be dynamically added here -->
+                      </div>
                     </div>
-                    <!-- Riht content -->
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Berita Populer</h4>
-                                @foreach ($popular as $pop)
-                                    <div class="trand-right-single d-flex">
-                                        <div class="trand-right-img">
-                                            <img src="{{ $pop->image_url }}" alt="" width="100" height="100">
-                                        </div>
-                                        <div class="trand-right-cap">
-                                            <span class="color1">{{ $pop->categories->name }}</span>
-                                            <h4><a href="{{ route('detail',$pop->id) }}">{{ $pop->name }}</a></h4>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                    
+                  </div>
                 </div>
+                <!-- Right content -->
+                @include('layouts.right')
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <!-- Trending Area End -->
-    <!--   Weekly-News start -->
-    <div class="weekly-news-area pt-50">
-        <div class="container">
-            <div class="weekly-wrapper">
-                <!-- section Tittle -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle mb-30">
-                            <h3>Berita Populer Mingguan</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="weekly-news-active dot-style d-flex dot-style">
-                            @foreach ($popular as $item)
-                                <div class="weekly-single">
-                                    <div class="weekly-img">
-                                        <img src="{{ $item->image_url }}" alt="" height="400">
-                                    </div>
-                                    <div class="weekly-caption">
-                                        <span class="color1">{{ $item->categories->name }}</span>
-                                        <h4><a href="{{ route('detail',$item->id) }}">{{ $item->name }}</a></h4>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-               
-    <!-- End Weekly-News -->
-   <!-- Whats New Start -->
-   
-    <!-- Whats New End -->
-    <!--   Weekly2-News start -->
-          
-    <!-- End Weekly-News -->
-    <!-- Start Youtube -->
-   
-    <!-- End Start youtube -->
-    <!--  Recent Articles start -->
-          
-    <!--Recent Articles End -->
-    <!--Start pagination -->
-
-    <!-- End pagination  -->
-    </main>
+        @include('layouts.end-content')
+      </main>
+      
+      
     
    @include('layouts.footer2')
    
 	<!-- JS here -->
-    {{ URL::asset('/build/css/bootstrap.min.css') }}
+
 		<!-- All JS Custom Plugins Link Here here -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
         <script src="{{ URL::asset('/assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
 		<!-- Jquery, Popper, Bootstrap -->
 		<script src="{{ URL::asset('/assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -204,6 +128,43 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="{{ URL::asset('/assets/js/plugins.js') }}"></script>
         <script src="{{ URL::asset('/assets/js/main.js') }}"></script>
+        <script>
+            // Get the path to your PDF file
+            var pdfPath = "/assets/pdf/adart.pdf";
+        
+            // PDF.js configuration options
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+        
+            // Load the PDF document
+            pdfjsLib.getDocument(pdfPath).promise.then(function (pdf) {
+              var totalPages = pdf.numPages; // Get the total number of pages in the PDF
+              var container = document.getElementById('pdf-viewer');
+        
+              // Iterate through each page and render it
+              for (var i = 1; i <= totalPages; i++) {
+                // Create a container for each page
+                var pageContainer = document.createElement('div');
+                pageContainer.className = 'pdf-page';
+                container.appendChild(pageContainer);
+        
+                // Render the page
+                pdf.getPage(i).then(function (page) {
+                  var scale = 1.5;
+                  var viewport = page.getViewport({ scale: scale });
+                  var canvas = document.createElement('canvas');
+                  canvas.className = 'pdf-canvas';
+        canvas.style.maxWidth = '100%';
+        
+                  var context = canvas.getContext('2d');
+                  canvas.height = viewport.height;
+                  canvas.width = viewport.width;
+                  page.render({ canvasContext: context, viewport: viewport }).promise.then(function () {
+                    pageContainer.appendChild(canvas);
+                  });
+                });
+              }
+            });
+          </script>
         
     </body>
 </html>
