@@ -50,7 +50,7 @@
                                 @endforeach
                                 
                                 </td>
-                                <td class="centered-cell">{{ $value->keterangan }}</td>
+                                <td class="centered-cell">{{ \Illuminate\Support\Str::limit(strip_tags($value->keterangan), 25) }}</td>
                                 <td class="centered-cell"><img src="{{ $value->dokumentasi }}" alt="Foto" width="100px" height="100px"></td>
                                 <td class="centered-cell">
                                     <a href="{{ route('absensi.show', $value->id) }}" class="btn btn-primary">Detail</a>
