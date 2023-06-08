@@ -13,6 +13,40 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-home-circle"></i>
+                        <span key="t-dashboards">@lang('translation.Anggota')</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                       
+                            <li>
+                                <a href="{{ route('anggota.index') }}"
+                                   key="t-default">@lang('translation.Data_Anggota')</a>
+                            </li>
+                       
+                            
+                      
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-home-circle"></i>
+                        <span key="t-dashboards">@lang('translation.Absensi')</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                       
+                            <li>
+                                <a href="{{ route('absensi.index') }}"
+                                   key="t-default">@lang('translation.Data_Absensi')</a>
+                            </li>
+                       
+                            
+                      
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-home-circle"></i>
                         <span key="t-dashboards">@lang('translation.Categories')</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">

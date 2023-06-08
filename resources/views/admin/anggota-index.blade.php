@@ -23,7 +23,7 @@
             <div class="card-body">
                 <div class="d-flex">
                     <div class="flex-grow-1">
-                        <p class="text-muted fw-medium">Total Pendaftar</p>
+                        <p class="text-muted fw-medium">Total Anggota</p>
                         <h4 class="mb-0">{{ $total }}</h4>
                     </div>
 
@@ -44,7 +44,7 @@
             <div class="card-body">
                 <div class="d-flex">
                     <div class="flex-grow-1">
-                        <p class="text-muted fw-medium">Total Pendaftar diterima</p>
+                        <p class="text-muted fw-medium">Total Anggota Aktif</p>
                         <h4 class="mb-0">{{ $totalVerif }}</h4>
                     </div>
 
@@ -64,7 +64,7 @@
 <div class="row mb-3">
     <div class="col-12">
         <div class="d-flex justify-content-center justify-content-md-end">
-            <a href="{{ route('article.create') }}" class="btn btn-primary mx-2">Tambah Pendaftar</a>
+            <a href="{{ route('article.create') }}" class="btn btn-primary mx-2">Tambah Anggota</a>
         </div>
     </div>
 </div>
@@ -101,14 +101,14 @@
                                 <td class="centered-cell">{{ $value->ukuran_baju }}</td>
                                 <td class="centered-cell">{{ $value->alamat }}</td>
                                 <td class="centered-cell">
-                                    {!! ($value->status == 1) ? '<span class="badge badge-pill badge-soft-success font-size-11">Diterima</span>' : '<span class="badge badge-pill badge-soft-danger font-size-11">Belum Diterima</span>' !!}
+                                    {!! ($value->status == 1) ? '<span class="badge badge-pill badge-soft-success font-size-11">Aktif</span>' : '<span class="badge badge-pill badge-soft-danger font-size-11">Tidak Aktif</span>' !!}
                                 </td>
                                 <td class="centered-cell"><img src="{{ $value->image_url }}" alt="Foto" width="100px" height="100px"></td>
                                 <td class="centered-cell">
-                                    <a href="{{ route('pendaftar.show', $value->id) }}" class="btn btn-primary">Detail</a>
-                                    <a href="{{ route('pendaftar.edit', $value->id) }}" class="btn btn-warning">Edit</a>
+                                    <a href="{{ route('anggota.show', $value->id) }}" class="btn btn-primary">Detail</a>
+                                    <a href="{{ route('anggota.edit', $value->id) }}" class="btn btn-warning">Edit</a>
                                     @if (!$value->status )
-                                    <a href="{{ route('pendaftar.publish', $value->id) }}"
+                                    <a href="{{ route('anggota.publish', $value->id) }}"
                                         class="btn btn-success">Terima</a>
                                     @endif
                                 </td>
