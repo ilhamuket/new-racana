@@ -88,12 +88,12 @@
                                       </ul>
                                 </div>
 
-                               <div class="row" >       
+                               <div class="row mt-3" >       
    
                                  <p class="font-weight-bold" >1. RD GATOT MANGKUPRADJA </p> 
                                 </div>
 
-                                     <div class="row justify-content-center">
+                                     <div class="row justify-content-center mb-3">
                                         <img style="width: 10cm"  src="..\assets\img\gatot\putra.jpeg" >
                                     </div>
                                     <div>
@@ -108,7 +108,7 @@
                                         <p class="font-weight-bold" >2. RD DEWI SARTIKA </p> 
                                        </div>
        
-                                            <div class="row justify-content-center">
+                                            <div class="row justify-content-center mb-3">
                                                <img style="width: 10cm"  src="..\assets\img\dewi\putri.jpg" >
                                            </div>
                                            <div>
