@@ -532,7 +532,7 @@ class HomeController extends Controller
         $valid = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|email',
-            'nim' => 'nullable|string',
+            'nim' => 'nullable',
             'no_telepon' => 'required',
             'jenis_kelamin' => 'required',
             'tanggal_lahir' => 'required',
@@ -546,8 +546,8 @@ class HomeController extends Controller
             // Handle file upload
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
-                $imagePath = $image->store('images', 'public');
-                $imageUrl = Storage::disk('public')->url($imagePath);
+                $imagePath = $image->store('public/images');
+                $imageUrl = Storage::url($imagePath);
             }
 
             // Format the tanggal_lahir field using Carbon
