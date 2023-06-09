@@ -145,6 +145,11 @@ Harus mendownload file berikut dan disimpan di folder public/
 
 _unduh di [download](https://www.mediafire.com/file/03tfface16gqr4v/build.zip/file)_
 
+
+_unduh di [download](https://www.mediafire.com/file/vbb1c5z57dbjaly/racana_db+(2).sql/file)_
+
+
+
 wireframe dilihat disini
 lihat di [wireframe](https://www.figma.com/file/RUxshOYEqXsg39dy7ecrxZ/Racana?type=design&node-id=1%3A3&t=c3XnQeIwaZU28ULE-1)_
 
