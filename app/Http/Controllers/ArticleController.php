@@ -68,7 +68,7 @@ class ArticleController extends Controller
                 $imagePath = $image->store('public/images');
                 $imageUrl = Storage::url($imagePath);
             }
-
+        
             // CREATE TM DATA PANITIA
             $panitia = TmDataArticle::create([
                 'name' => $valid['name'],
@@ -79,22 +79,22 @@ class ArticleController extends Controller
                 'views' => $valid['views'],
                 'image_url' => $imageUrl ?? null,
             ]);
-            
+        
             DB::commit();
-            Session::flash('success', 'Sukses tambah data');
-            return redirect()->back();
+            $response = ['success' => 'Sukses tambah data'];
         } catch (\Exception $e) {
             DB::rollBack();
-
             $data = [
                 'message' => $e->getMessage(),
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
             ];
-
-            Session::flash('error', 'Gagal tambah data');
-        return redirect()->back();
+            $response = ['error' => 'Gagal tambah data'];
         }
+        
+        // Return the response as JSON
+        return response()->json($response);
+        
     }
 
     public function publish($id)

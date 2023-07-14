@@ -23,7 +23,7 @@
 
             <div class="card shadow-none border col-12">
                 <h3 class="text-center bold mt-3 mb-3">Tambah Artikel</h3>
-
+                <div id="alert-container"></div>
                 <form method="post" action="{{ route('article.store') }}" class="my-4" id="form-registration" enctype="multipart/form-data">
                     @csrf
                     
@@ -77,6 +77,72 @@
 </section>
 @endsection
 @section('script')
+<script>
+    $(document).ready(function() {
+        let registrationForm = $("#form-registration");
+        let alertContainer = $("#alert-container");
+
+        registrationForm.on("submit", function(event) {
+            event.preventDefault();
+
+            // Get the form data
+            let formData = new FormData(this);
+
+            // Append additional fields
+            formData.append('created_by', '{{ auth()->user()->id }}');
+            formData.append('views', '0');
+
+            $.ajax({
+                url: registrationForm.attr("action"),
+                method: registrationForm.attr("method"),
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                        // Handle success response
+                        if (response.success) {
+                            // Show success alert
+                            let alert = $('<div>').addClass('alert alert-success').text('Sukses tambah data');
+                            alertContainer.html(alert);
+
+                            // Redirect after a certain time
+                            setTimeout(function() {
+                                window.location.href = "{{ route('article.index') }}";
+                            }, 3000);
+                        } else {
+                            // Show error alert
+                            let alert = $('<div>').addClass('alert alert-danger').text('Gagal tambah data');
+                            alertContainer.html(alert);
+                        }
+
+                        // Optional: Hide the alert after a certain time
+                        setTimeout(function() {
+                            alertContainer.empty();
+                        }, 3000);
+
+                        // Reset the form
+                        registrationForm[0].reset();
+                    },
+
+                error: function(xhr, status, error) {
+                    // Handle error response
+                    let errorMessage = 'Terjadi kesalahan saat mengirim permintaan AJAX: ' + error;
+                    let alert = $('<div>').addClass('alert alert-danger').text(errorMessage);
+                    alertContainer.html(alert);
+
+                    // Optional: Hide the alert after a certain time
+                    setTimeout(function() {
+                        alertContainer.empty();
+                    }, 3000);
+                }
+            });
+        });
+    });
+</script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -90,19 +156,9 @@
         } );
 </script>
 
-{{-- <script>
-    $(document).ready(function() {
-    $('form').submit(function(event) {
-        var editorData = CKEDITOR.instances.editor.getData();
-        if (!editorData || editorData.trim() === '') {
-            event.preventDefault();
-            // Display an error message or perform any necessary actions
-            alert('Deskripsi harus diisi.');
-        }
-    });
-});
 
-</script> --}}
+
+
 <script>
     
     $(document).ready(function() {
@@ -133,40 +189,6 @@
 
     });
 </script>
-<script>
-    $(document).ready(function() {
-    let registrationForm = $("#form-registration");
 
-    registrationForm.on("submit", function(event) {
-        event.preventDefault();
 
-        // Get the form data
-        let formData = new FormData(this);
-
-        // Append additional fields
-        formData.append('created_by', '{{ auth()->user()->id }}');
-        formData.append('views', '0');
-
-        $.ajax({
-            url: registrationForm.attr("action"),
-            method: registrationForm.attr("method"),
-            data: formData,
-            processData: false,
-            contentType: false,
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            success: function(res) {
-                // Handle success response
-                console.log(res);
-            },
-            error: function(res) {
-                // Handle error response
-                console.log(res);
-            }
-        });
-    });
-});
-
-</script>
 @endsection

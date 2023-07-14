@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
@@ -82,6 +84,18 @@ Route::prefix('pendaftar')->middleware('auth')->group(function () {
     Route::post('/store', [PendaftarController::class, 'store'])->name('pendaftar.store');
 });
 
+Route::prefix('anggota')->middleware('auth')->group(function () {
+    Route::get('/list', [AnggotaController::class,  'list'])->name('anggota.list');
+    Route::get('/create', [AnggotaController::class,  'create'])->name('anggota.create');
+    Route::get('/edit/{id}', [AnggotaController::class, 'edit'])->name('anggota.edit');
+    Route::put('/update/{id}', [AnggotaController::class, 'update'])->name('anggota.update');
+    Route::get('/delete/{id}', [AnggotaController::class, 'delete'])->name('anggota.delete');
+    Route::get('/publish/{id}', [AnggotaController::class, 'publish'])->name('anggota.publish');
+    Route::get('/index', [AnggotaController::class, 'index'])->name('anggota.index');
+    Route::get('/anggota/show/{id}', [AnggotaController::class, 'show'])->name('anggota.show');
+    Route::post('/store', [AnggotaController::class, 'store'])->name('anggota.store');
+});
+
 
 Route::prefix('category')->middleware('auth')->group(function () {
     Route::get('/list', [CategoryController::class,  'list'])->name('category.list');
@@ -93,4 +107,16 @@ Route::prefix('category')->middleware('auth')->group(function () {
     Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('category.show');
     Route::post('/store', [CategoryController::class, 'store'])->name('category.store');
     Route::get('/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
+});
+
+Route::prefix('absensi')->middleware('auth')->group(function () {
+    Route::get('/list', [AbsensiController::class,  'list'])->name('absensi.list');
+    Route::get('/create', [AbsensiController::class,  'create'])->name('absensi.create');
+    Route::get('/edit/{id}', [AbsensiController::class, 'edit'])->name('absensi.edit');
+    Route::put('/update/{id}', [AbsensiController::class, 'update'])->name('absensi.update');
+    Route::get('/publish/{id}', [AbsensiController::class, 'publish'])->name('absensi.publish');
+    Route::get('/index', [AbsensiController::class, 'index'])->name('absensi.index');
+    Route::get('/absensi/show/{id}', [AbsensiController::class, 'show'])->name('absensi.show');
+    Route::post('/store', [AbsensiController::class, 'store'])->name('absensi.store');
+    Route::get('/delete/{id}', [AbsensiController::class, 'delete'])->name('absensi.delete');
 });

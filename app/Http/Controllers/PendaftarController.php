@@ -17,7 +17,8 @@ class PendaftarController extends Controller
     public function index()
     {
 
-        $data = TmDataPendaftar::get();
+        $data = TmDataPendaftar::orderBy('created_at', 'desc')->get();
+        
 
         $dataVerif = $data->where('status', '1');
 

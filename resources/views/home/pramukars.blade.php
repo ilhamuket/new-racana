@@ -68,7 +68,7 @@
                         <div class="trending-top mb-30">
                             
                             <div class="trend-top-img">
-                                <img src="{{ $trending->image_url }}" alt="" width="300">
+                                <img src="build/img/trending/pramuka3.jpg" alt="" width="300">
                             </div>
                             
                         </div>
@@ -79,9 +79,45 @@
                                     <h2>PRAMUKA ARS UNIVERSITY</h2>
                                 </div>
                                 <div class="row">
-                                    <p>ini nantinya penjelasan logo.</p> <br>
-                                    
+                                    <p>UKM Pramuka ARS merupakan unit kegiatan mahasiswa ARS yang dapat mengembangkan minat dan bakat serta karakter pada anggota. Berkegiatan pramuka akan banyak berbagai bentuk yang dapat mengembangkan karakter seperti cinta tanah air, komunikatif dan bersahabat, disiplin, jujur, dan bertanggung jawab, serta berjiwa sosial.</p> <br>
+                                    <p>Dalam UU No.12 Tahun 2010 tentang Gerakan Pramuka Pasal 11 dan pasal 12 yang menyebutkan bahwa “Pendidikan kepramukaan dalam sistem pendidikan Nasional termasuk jalur pendidikan nonformal yang diperkaya dengan pendidikan nilai nilai gerakan pramuka dalam pembentukan kepribadian dan berakhlak mulia, berjiwa patriot, taat hukum, disiplin, menjunjung nilai nilai luhur bangsa dan memiliki kecakapan hidup”.</p> <br>
+                                    <p>UKM ini dinamakan “Gatot Mangkupradja ” untuk putra dan “Dewi Sartika” untuk putri. Berbagai kegiatan di UKM pramuka ARS yang jadi unggulan, yaitu terdapat 2 unit.</p>
+                                    <ul class="numbered-list">
+                                        <li class="mb-2">1. Unit protokoler, merupakan unit kegiatan yang untuk mengembangkan bakan di bidang acara, masater of ceremony (MC).</li>
+                                        <li>2. Unit SAR, merupakan unit dalam bentuk kegiatan mitigasi bencana baik dalam pertolongan ataupun pencegahan.</li>
+                                      </ul>
                                 </div>
+
+                               <div class="row mt-3" >       
+   
+                                 <p class="font-weight-bold" >1. RD GATOT MANGKUPRADJA </p> 
+                                </div>
+
+                                     <div class="row justify-content-center mb-3">
+                                        <img style="width: 10cm"  src="..\assets\img\gatot\putra.jpeg" >
+                                    </div>
+                                    <div>
+                                        <p>Gatot mangkoepraja adalah pahlawan nasional yang lahir di Sumedang, Jawa Barat pada 25 Desember 1898. Ayahnya, dr. Saleh  Mangkoepraja adalah dokter pertama yang berasaaal dari sumedang, Karirnya didunia politik Indonesia diawali saat gatot bergabung dengan  Perhimpunan Indonesia (PI). Kemudian, pada 4 juli 1927 saat Partai Nasional Indonesia (PNI) resmi didirikan di Bandung, Gatot bergabung.
+                                            Gatot mangkoeprdaja terlibat dalam pergerakan nasional berawal dari ia bergabung dengan  Perhimpunan Indonesia (PI). Ketika Partai Nasional Indonesia (PNI) berdiri di Bandung pada tanggal 4 julii 1927, gatot Mangkoepraja segera menggabungkan diri dengan organisasi yang dipimpin oleh Ir. Soekarno itu, akibat menjunjung tinggi konsep revolusi Indonesia, maka pada tanggal 24 Desember 1929 pemerintah Hindia Belanda mengeluarkan perintah penangkapan terhadap Gatot Mangkoepradja dan para pemimpin PNI lainnya. Penangkapan terhadap Gatot Mangkoepradja baru dapat dilakukan pada tanggal 29 Desember 1929 di Yogyakarta. Gatot ditangkap bersama-sama dengan Ir. Soekarno. Mereka kemudian dibawa ke Bandung dan dijebloskan ke Penjara Banceuy.
+                                            Gatot Mankoepradja mulai dihadapkan ke Landraad Bandung bersama-sama dengan Ir. Soekarno, Maskoen Soemadiredja, dan Soepriadinata pada tanggal 18 Agustus 1930. Mereka dijerat dengan tuduhan Pasal 169 bis dan 153 bis Wetboek van Strafrecht (KUHO-nya zaman kolonial). Mereka diadili dengan Hakim ketua; Mr. Siegenbeek van Huekelom dengan jaksa Penuntut; R. Soemadisoerja. Peristiwa ini dikenal dengan nama Indonesia menggugat.
+                                    Akibat perpecahan PNI menjadi Partindo dan PNI-baru maka pada tanggal 25 April 1931 Gatot Mangkoepradja bergabung dengan Partindo karena ia merasa partai ini mempunyai persamaan ideology dengan PNI. Namun tak lama, akhirnya ia keluar dari Partindo karena merasa kecewa dengan Soekarno dan bergabung dengan PNI_Baru pimpinan Hatta.
+                                     </p>  <br>
+                                    </div>
+                                    <div class="row" >       
+   
+                                        <p class="font-weight-bold" >2. RD DEWI SARTIKA </p> 
+                                       </div>
+       
+                                            <div class="row justify-content-center mb-3">
+                                               <img style="width: 10cm"  src="..\assets\img\dewi\putri.jpg" >
+                                           </div>
+                                           <div>
+                                               <p>Raden Dewi Sartika atau Dewi Sartika merupakan tokoh pejuang wanita yang berasal dari Cicalengka, Bandung. Dewi Sartika dikenal sebagai tokoh Jawa Barat menjadi perintis pendidikan bagi kaum perempuan. Ia mendirikan sekolah bagi kaum perempuan bernama Sekolah Isteri di Pendopo Kabupaten Bandung.
+                                                Dewi Sartika lahir pada 4 esember 1884 dari keluarga Sunda ternama, yaitu Raden Rangga Somanegara dan R.A Rajapermas dari Cicalengka dan Dewi Sartika wafat pada 11 September 1947 dan dikukuhkan sebagai Pahlawan Nasional Indonesia pada 1 Desember 1966.
+                                            
+                                            </p>  <br>
+                                           </div>
+
                             </div>
                         </div>
                         

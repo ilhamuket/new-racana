@@ -9,6 +9,9 @@ use App\Models\TmDataPendaftar;
 use App\Helpers\ResponseFormatter;
 use App\Models\TmRefCategory;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
@@ -50,9 +53,10 @@ class HomeController extends Controller
     ->where('status', 1)
     ->where('categories_id', '!=', 1)
     ->orderBy('created_at', 'desc')
-    ->skip(1)
-    ->take(PHP_INT_MAX)
-    ->get();
+    ->offset(1)
+    ->paginate(9);
+
+
 
     $inter = TmDataArticle::with('categories')
                     ->where('status', 1)
@@ -72,39 +76,36 @@ class HomeController extends Controller
 
 
         return view('home.index',compact('data','trending','popular', 'kategori','inter'));
-    }
+        }
     
-    public function sandiambacana(){
-
-        $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
-
-        $data = TmDataArticle::with('categories')
-        ->where('status', 1)
-        ->where('categories_id', '!=', 1)
-        ->orderBy('created_at', 'desc')
-        ->skip(1)
-        ->take(PHP_INT_MAX)
-        ->get();
-    
-        $inter = TmDataArticle::with('categories')
-                        ->where('status', 1)
-                        ->where('categories_id', 1)
-                        ->orderBy('created_at', 'desc')
-                        ->limit(5)
-                        ->get();
-    
-        $popular = TmDataArticle::with('categories')
-                        ->where('status', 1)
-                        ->inRandomOrder()
-                        ->limit(5)
-                        ->get();
-    
-        $kategori = TmRefCategory::where('status', 1)->get();
-
-
-
-                    return view('home.index',compact('data','trending','popular', 'kategori','inter'));
-    }
+        public function sandiambacana()
+        {
+            $trending = TmDataArticle::with('categories')->where('status', 1)->where('categories_id', '!=', 1)->latest()->first();
+        
+            $data = TmDataArticle::with('categories')
+                ->where('status', 1)
+                ->where('categories_id', '!=', 1)
+                ->orderBy('created_at', 'desc')
+                ->paginate(6); // Use paginate() instead of get()
+        
+            $inter = TmDataArticle::with('categories')
+                ->where('status', 1)
+                ->where('categories_id', 1)
+                ->orderBy('created_at', 'desc')
+                ->limit(5)
+                ->get();
+        
+            $popular = TmDataArticle::with('categories')
+                ->where('status', 1)
+                ->inRandomOrder()
+                ->limit(5)
+                ->get();
+        
+            $kategori = TmRefCategory::where('status', 1)->get();
+        
+            return view('home.sandiambacana', compact('data', 'trending', 'popular', 'kategori', 'inter'));
+        }
+        
 
     public function logo(){
 
@@ -531,7 +532,7 @@ class HomeController extends Controller
         $valid = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|email',
-            'nim' => 'nullable|string',
+            'nim' => 'nullable',
             'no_telepon' => 'required',
             'jenis_kelamin' => 'required',
             'tanggal_lahir' => 'required',
@@ -545,8 +546,8 @@ class HomeController extends Controller
             // Handle file upload
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
-                $imagePath = $image->store('images', 'public');
-                $imageUrl = Storage::disk('public')->url($imagePath);
+                $imagePath = $image->store('public/images');
+                $imageUrl = Storage::url($imagePath);
             }
 
             // Format the tanggal_lahir field using Carbon
@@ -584,20 +585,51 @@ class HomeController extends Controller
         }
     }
 
-    public function detail($id){
+    public function detail($id)
+    {
+        try {
+            DB::beginTransaction();
+            
+            // Find the record by ID
+            $item = TmDataArticle::findOrFail($id);
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
-        $item = TmDataArticle::with('categories')->where('status', 1)->where('id',$id)->first();
-        $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
+            // Update the 'views' column
+            $item->views += 1;
+            $item->save();
 
+            DB::commit();
 
+            $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
-        return view('home.detail',compact('item','trending','popular'));
+            $inter = TmDataArticle::with('categories')
+                            ->where('status', 1)
+                            ->where('categories_id', 1)
+                            ->orderBy('created_at', 'desc')
+                            ->limit(5)
+                            ->get();
+
+            $popular = TmDataArticle::with('categories')
+                            ->where('status', 1)
+                            ->inRandomOrder()
+                            ->limit(5)
+                            ->get();
+
+            $kategori = TmRefCategory::where('status', 1)->get();
+
+            return view('home.detail', compact('item', 'trending', 'popular', 'kategori', 'inter'));
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            $data = [
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+            ];
+
+            return ResponseFormatter::error($data);
+        }
     }
+
 
     public function detailKategori($id){
 

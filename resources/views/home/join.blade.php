@@ -27,16 +27,16 @@
                                             <h3 class="text-center bold mb-3">BIODATA</h3>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="nomor_tanda_anggota">Nomor Induk Mahasiswa</label>
-                                                    <input type="number" class="form-control" id="NTA" placeholder="Masukan Nomor Induk Mahasiswa Kakak" name="nim">
+                                                    <label for="nim">Nomor Induk Mahasiswa</label>
+                                                    <input type="text" class="form-control" id="nim" placeholder="Masukan Nomor Induk Mahasiswa Kakak" name="nim">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="nama">Nama (*)</label>
-                                                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Nama Kakak" required>
+                                                    <label for="name">Nama (*)</label>
+                                                    <input type="text" class="form-control" id="name" name="name" placeholder="Masukan Nama Kakak" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -312,11 +312,11 @@
 
             // Append the file to the FormData object
             formData.append('image', imageInput.files[0]);
-
+            formData.append('nim', $('#nim').val());
             // Append other form data fields to the FormData object
             formData.append('name', $('#name').val());
             formData.append('email', $('#email').val());
-            formData.append('nim', $('#nim').val());
+            
             formData.append('no_telepon', $('#no_telepon').val());
             formData.append('jenis_kelamin', $('input[name="jenis_kelamin"]:checked').val());
             formData.append('tanggal_lahir', $('#tanggal_lahir').val());
@@ -326,7 +326,7 @@
             
             let redirectUrl;
 
-            
+            console.log(formData);
             $.ajax({
                 url: "{{ route('store') }}",
                 type: "POST",
@@ -428,18 +428,19 @@
 
 <script>
         $(document).ready(function() {
-    $('#nta_input').hide();
+            
 
     $('input[name="nim"]').on('input', function() {
         var precedingValue = $(this).val();
         if (precedingValue !== '') {
         $('#NTA_konf').val(precedingValue);
         } else {
+            $('#nta_input').hide();
         $('#NTA_konf').val('');
         }
     });
 
-    $('input[name="nama"]').on('input', function() {
+    $('input[name="name"]').on('input', function() {
         var precedingValue = $(this).val();
         if (precedingValue !== '') {
         $('#nama_konf').val(precedingValue);
