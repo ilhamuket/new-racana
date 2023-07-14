@@ -89,6 +89,7 @@ Route::prefix('anggota')->middleware('auth')->group(function () {
     Route::get('/create', [AnggotaController::class,  'create'])->name('anggota.create');
     Route::get('/edit/{id}', [AnggotaController::class, 'edit'])->name('anggota.edit');
     Route::put('/update/{id}', [AnggotaController::class, 'update'])->name('anggota.update');
+    Route::get('/delete/{id}', [AnggotaController::class, 'delete'])->name('anggota.delete');
     Route::get('/publish/{id}', [AnggotaController::class, 'publish'])->name('anggota.publish');
     Route::get('/index', [AnggotaController::class, 'index'])->name('anggota.index');
     Route::get('/anggota/show/{id}', [AnggotaController::class, 'show'])->name('anggota.show');

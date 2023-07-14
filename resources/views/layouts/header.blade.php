@@ -61,7 +61,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="{{ route('programkerja') }}">PROGRAM KERJA</a></li>
-                                            <li><a href="{{ route('prestasi') }}">PRESTASI</a></li>
+                                            {{-- <li><a href="{{ route('prestasi') }}">PRESTASI</a></li> --}}
                                     </ul>
                                 </nav>
                             </div>

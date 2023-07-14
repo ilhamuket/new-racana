@@ -54,7 +54,7 @@ class HomeController extends Controller
     ->where('categories_id', '!=', 1)
     ->orderBy('created_at', 'desc')
     ->offset(1)
-    ->paginate(6);
+    ->paginate(9);
 
 
 

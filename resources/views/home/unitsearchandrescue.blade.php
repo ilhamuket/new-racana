@@ -79,8 +79,9 @@
                                     <h2>UNIT SEARCH AND RESCUE AMBACANA ARS UNIVERSITY</h2>
                                 </div>
                                 <div class="row">
-                                    <p>ini nantinya penjelasan logo.</p> <br>
-                                    
+                                    <p>Unit SAR (Search and Rescue) dalam pramuka merujuk pada unit atau kelompok yang bertanggung jawab dalam kegiatan pencarian dan penyelamatan. SAR adalah singkatan dari kegiatan pramuka yang berkaitan dengan mencari dan menyelamatkan orang yang hilang atau dalam situasi darurat di alam terbuka atau wilayah terpencil.</p> <br>
+                                    <p>Unit SAR dalam pramuka biasanya terdiri dari anggota-anggota yang terlatih dan berkompeten dalam teknik pencarian dan penyelamatan. Mereka dilengkapi dengan pengetahuan dan keterampilan dalam navigasi, pertolongan pertama, penanganan darurat, dan komunikasi di alam terbuka. Unit SAR ini dapat dilibatkan dalam misi pencarian orang yang hilang, evakuasi dari daerah terpencil atau terdampak bencana, dan memberikan bantuan di tempat-tempat yang sulit dijangkau.</p>
+                                    <p>Unit SAR dalam pramuka bertujuan untuk membantu sesama dan memberikan kontribusi dalam kegiatan kemanusiaan. Mereka dapat bekerja sama dengan pihak berwenang, tim penyelamat, atau organisasi-organisasi terkait dalam melakukan tugas-tugas pencarian dan penyelamatan. Dalam pelaksanaannya, unit SAR dalam pramuka juga berupaya untuk mempromosikan keselamatan, kesadaran lingkungan, dan keterampilan bertahan hidup kepada anggota pramuka dan masyarakat umum.</p>
                                 </div>
                             </div>
                         </div>

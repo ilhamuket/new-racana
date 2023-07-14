@@ -79,7 +79,9 @@
                                     <h2>UNIT MEDIA PERS AMBACANA ARS UNIVERSITY</h2>
                                 </div>
                                 <div class="row">
-                                    <p>ini nantinya penjelasan logo.</p> <br>
+                                    <p>Bidang Humas atau Kominfo bertanggung jawab untuk mengelola komunikasi dan informasi dalam organisasi pramuka. Tugas-tugasnya meliputi menyebarkan informasi kepada anggota pramuka dan masyarakat, mempromosikan kegiatan pramuka melalui media massa dan saluran komunikasi lainnya, serta menjaga hubungan baik dengan media dan publik.</p> 
+                                    <p>Dalam kegiatan pramuka, anggota yang tergabung dalam Bidang Humas atau Kominfo biasanya bertanggung jawab untuk mengelola situs web, media sosial, dan saluran komunikasi lainnya. Mereka juga dapat bertindak sebagai juru bicara dalam acara-acara resmi, melakukan liputan media, membuat materi promosi, dan menyediakan informasi kepada anggota pramuka dan masyarakat.</p>
+                                    <p>Meskipun tidak secara spesifik disebut sebagai "unit", Bidang Humas atau Kominfo memiliki peran penting dalam membangun citra pramuka, menyebarkan informasi yang relevan, dan menjalin hubungan yang baik dengan masyarakat luas melalui media dan komunikasi.                                    </p>
                                     
                                 </div>
                             </div>
