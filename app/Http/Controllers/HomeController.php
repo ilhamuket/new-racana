@@ -585,32 +585,51 @@ class HomeController extends Controller
         }
     }
 
-    public function detail($id){
+    public function detail($id)
+    {
+        try {
+            DB::beginTransaction();
+            
+            // Find the record by ID
+            $item = TmDataArticle::findOrFail($id);
 
-        $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
-        $item = TmDataArticle::with('categories')->where('status', 1)->where('id',$id)->first();
-        
+            // Update the 'views' column
+            $item->views += 1;
+            $item->save();
 
-    $inter = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->where('categories_id', 1)
-                    ->orderBy('created_at', 'desc')
-                    ->limit(5)
-                    ->get();
+            DB::commit();
 
-    $popular = TmDataArticle::with('categories')
-                    ->where('status', 1)
-                    ->inRandomOrder()
-                    ->limit(5)
-                    ->get();
+            $trending = TmDataArticle::with('categories')->where('status', 1)->latest()->first();
 
-    $kategori = TmRefCategory::where('status', 1)->get();
+            $inter = TmDataArticle::with('categories')
+                            ->where('status', 1)
+                            ->where('categories_id', 1)
+                            ->orderBy('created_at', 'desc')
+                            ->limit(5)
+                            ->get();
 
+            $popular = TmDataArticle::with('categories')
+                            ->where('status', 1)
+                            ->inRandomOrder()
+                            ->limit(5)
+                            ->get();
 
+            $kategori = TmRefCategory::where('status', 1)->get();
 
+            return view('home.detail', compact('item', 'trending', 'popular', 'kategori', 'inter'));
+        } catch (\Exception $e) {
+            DB::rollBack();
 
-        return view('home.detail',compact('item','trending','popular','kategori','inter'));
+            $data = [
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+            ];
+
+            return ResponseFormatter::error($data);
+        }
     }
+
 
     public function detailKategori($id){
 
