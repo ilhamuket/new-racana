@@ -52,7 +52,27 @@
         </div>
     </div> -->
     <!-- Preloader Start -->
-
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalTitle">Bergabung Bersama Kami!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ $trending->image_url }}" alt="pramuka Image" class="img-fluid mb-3">
+                    <p>Salam Pramuka! <br> Saat ini kami sedang membuka open recruitment Anggota Pramuka Ars University Tahun 2023. <br> Jika kakak tertarik, silahkan kakak bisa klik tombol dibawah ini yaa!</p>
+                    <div class="text-center">
+                        <a href="{{ route('store') }}" class="btn btn-primary">Daftar Anggota</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
     @include('layouts.header')
 
     <main>
@@ -194,6 +214,11 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="{{ URL::asset('/assets/js/plugins.js') }}"></script>
         <script src="{{ URL::asset('/assets/js/main.js') }}"></script>
-        
+        <script>
+            $(document).ready(function() {
+                // Show the modal when the page is opened
+                $('#myModal').modal('show');
+            });
+        </script>
     </body>
 </html>
